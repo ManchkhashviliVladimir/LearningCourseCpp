@@ -16,7 +16,7 @@ int main()
     std::cout << name3 << '\n';
     std::cin >> sezon;
 
-    // 12 January Winter
+    // 12 January Winter xxx
 
 
     if (day < 32)

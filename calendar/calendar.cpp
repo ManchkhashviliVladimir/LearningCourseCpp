@@ -3,6 +3,7 @@
 
 int main()
 {
+    //some new code added here
     int day = 0, month = 0;
     char sezon;
     std::string name = "day:";

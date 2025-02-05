@@ -1,155 +1,61 @@
 #include <iostream>
 #include <string>
+#include "Header.h"
+
+std::string month_to_season(int month)
+{
+    if ((month >= 1) && (month <= 2) || (month == 12))
+        return "winter";
+    if ((month >= 3) && (month <= 5))
+        return "spring";
+    if ((month >= 6) && (month <= 8))
+        return "summer";
+    if ((month >= 9) && (month <= 11))
+        return "autumn";
+    return "Error, out of diapazone";
+}
+
+void testing()
+{
+    for (int i = -1; i <= 13; i++)
+    {
+        std::cout << "Month " << i << " -> " << month_to_season(i) << '\n';
+    }
+}
+
 
 int main()
 {
-    //some new code added here
+    /*testing();
+    return 6;*/
     int day = 0, month = 0;
-    char sezon;
+    int day_in_month[] = {31,28,30,30,31,30,31,31,31,30,30,31};
+    std::string sezon;
     std::string name = "day:";
     std::cout << name << '\n';
     std::cin >> day;
     std::string name2 = "month:";
     std::cout << name2 << '\n';
     std::cin >> month;
-    std::string name3 = "time of year:";
-    std::cout << name3 << '\n';
-    std::cin >> sezon;
 
-    // 12 January Winter xxx
-
-
-    if (day < 32)
-    {
-        std::cout << day << '\n';
-    }
-    else if (day > 32) // добавить ошибку отрицательного числа 
+   
+    if ((month > 12) && (month < 1))
     {
         std::cout << "eror" << '\n';
-        return 1;
-    }
-
-    char  january_month_max_day = 31 , x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12; // переделать на текстовый month
-
-    if (january_month_max_day < 32)
-    {
-        std::cout << "January";
-    }
-    else if (x1 > 32)
-    {
-        std::cout << "eror" << '\n';
-    }
-    if (x2 < 29)
-    {
-        std::cout << "February";
-    }
-    else if (x2 > 29)
-    {
-        std::cout << "eror" << '\n';
-    }
-    if (x3 < 31)
-    {
-        std::cout << "March";
-    }
-    else if (x3 > 31)
-    {
-        std::cout << "eror" << '\n';
-    }
-    if (x4 < 30)
-    {
-        std::cout << "April";
-    }
-    else if (x4 > 30)
-    {
-        std::cout << "eror" << '\n';
-    }
-    if (x5 < 31)
-    {
-        std::cout << "May";
-    }
-    else if (x5 > 31)
-    {
-        std::cout << "eror" << '\n';
-    }
-    if (x6 < 30)
-    {
-        std::cout << "June";
-    }
-    else if (x6 > 30)
-    {
-        std::cout << "eror" << '\n';
-    }
-    if (x7 < 31)
-    {
-        std::cout << "July";
-    }
-    else if (x7 > 31)
-    {
-        std::cout << "eror" << '\n';
-    }
-    if (x8 < 31)
-    {
-        std::cout << "August";
-    }
-    else if (x8 > 31)
-    {
-        std::cout << "eror" << '\n';
-    }
-    if (x9 < 30)
-    {
-        std::cout << "September";
-    }
-    else if (x9 > 30)
-    {
-        std::cout << "eror" << '\n';
-    }
-    if (x10 < 31)
-    {
-        std::cout << "October";
-    }
-    else if (x10 > 31)
-    {
-        std::cout << "eror" << '\n';
-    }
-    if (x11 < 30)
-    {
-        std::cout << "November";
-    }
-    else if (x11 > 30)
-    {
-        std::cout << "eror" << '\n';
-    }
-    if (x12 < 31)
-    {
-        std::cout << "Desember";
-    }
-    else if (x12 > 31)
-    {
-        std::cout << "eror" << '\n';
+        return 2;
     }
 
 
+    if ((day > day_in_month[month-1]) && (day < 1))
+    {
+        std::cout << "eror" << '\n';
+         return 4;
+    }
+     
+    sezon = month_to_season(month); 
+    std::cout << sezon << '\n';
+        return 0;
 
-    char q1, q2, q3, q4;
-
-    if (q1 == x12, x1, x2);
-    {
-        std::cout << "Winter";
-    }
-    if (q2 == x3, x4, x5);
-    {
-        std::cout << "Spring";
-    }
-    if (q3 == x6, x7, x8);
-    {
-        std::cout << "Summer";
-    }
-    if (q4 == x9, x10, x11);
-    {
-        std::cout << "Autumn";
-    }
-
-    return 0;
  }
 
 
